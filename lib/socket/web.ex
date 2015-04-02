@@ -670,7 +670,8 @@ defmodule Socket.Web do
               { :close, close_code(code), rest }
           end)
 
-      { :ok, _ } ->
+      { :ok, debug } ->
+        IO.inspect debug
         { :error, :protocol_error }
 
       { :error, _ } = error ->
